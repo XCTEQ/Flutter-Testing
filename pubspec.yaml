@@ -35,6 +35,8 @@ dev_dependencies:
   screenshots:
   intl_translation: ^0.17.2  
 
+  flutter_gherkin:
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
