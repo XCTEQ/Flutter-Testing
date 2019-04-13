@@ -32,6 +32,9 @@ dev_dependencies:
   flutter_driver:
     sdk: flutter
 
+  screenshots:
+  intl_translation: ^0.17.2  
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
