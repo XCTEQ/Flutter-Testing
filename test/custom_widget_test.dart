@@ -39,4 +39,47 @@ testWidgets('Create and test my own widget', (WidgetTester tester) async {
     // Verifies that the widget updated the value correctly
     expect(value, equals(0.5));
    });
+
+// Second Test: Widget Class below the test 
+
+  testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
+    // Create the Widget tell the tester to build it
+    await tester.pumpWidget(MyWidget(title: 'T', message: 'M'));
+
+    // Create our Finders
+    final titleFinder = find.text('T');
+    final messageFinder = find.text('M');
+
+    // Use the `findsOneWidget` matcher provided by flutter_test to verify our
+    // Text Widgets appear exactly once in the Widget tree
+    expect(titleFinder, findsOneWidget);
+    expect(messageFinder, findsOneWidget);
+   });
+
+}
+
+class MyWidget extends StatelessWidget {
+  final String title;
+  final String message;
+
+  const MyWidget({
+    Key key,
+    @required this.title,
+    @required this.message,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
+        ),
+        body: Center(
+          child: Text(message),
+        ),
+      ),
+    );
   }
+}
