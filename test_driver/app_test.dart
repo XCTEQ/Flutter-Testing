@@ -3,7 +3,7 @@ import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Test Launch App', () {
+  group('Home Screen Test', () {
     FlutterDriver driver;
 
     setUpAll(() async {
@@ -18,7 +18,7 @@ void main() {
       }
     });
 
-    test('launch', () async {
+    test('verify the text on home screen', () async {
 
       SerializableFinder message = find.text("You have pushed the button this many times:");
       await driver.waitFor(message); 
